@@ -18,7 +18,6 @@ import { IoMdSettings } from "react-icons/io";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { TbMoneybag } from "react-icons/tb";
 
-
 function Profile() {
   const [showAccountNumber, setShowAccountNumber] = useState(false);
   const [showPanNumber, setShowPanNumber] = useState(false);
@@ -34,15 +33,15 @@ function Profile() {
     .map((n) => n[0])
     .join("");
 
-  const validatePan = ()=>{
+  const validatePan = () => {
     const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-    const test =  panRegex.test(panInput);
-    if(!test){
+    const test = panRegex.test(panInput);
+    if (!test) {
       alert("Invalid PAN format. Please enter a valid PAN.");
       return false;
     }
     return true;
-  }
+  };
 
   const handlePanSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +49,7 @@ function Profile() {
       alert("Please enter PAN number");
       return;
     }
-    if(!validatePan()){
+    if (!validatePan()) {
       return;
     }
     alert(`PAN ${panInput} submitted for verification`);
@@ -164,6 +163,7 @@ function Profile() {
                     >
                       <item.icon className={`${item.color} text-lg`} />
                     </div>
+                    
                     <div>
                       <p className="text-sm text-gray-500 font-medium">
                         {item.label}
@@ -257,7 +257,8 @@ function Profile() {
                         }
                         className="text-gray-400 hover:text-[#456682] transition-all duration-200"
                       >
-                        {showAccountNumber && item.label === "Account Number" ? (
+                        {showAccountNumber &&
+                        item.label === "Account Number" ? (
                           <FaEyeSlash />
                         ) : showPanNumber && item.label === "PAN" ? (
                           <FaEyeSlash />
@@ -280,17 +281,39 @@ function Profile() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Add Money", color: "bg-[#456682]", icon: <TbMoneybag />, navigate: "/addmoney" },
-              { label: "Withdraw", color: "bg-[#456682]", icon: <FaCreditCard />, navigate: "/withdraw" },
-              { label: "Transaction History", color: "bg-[#456682]", icon: <BsGraphUpArrow />, navigate: "/transactions" },
-              { label: "Settings", color: "bg-[#456682]", icon: <IoMdSettings />, navigate: "/settings" },
+              {
+                label: "Add Money",
+                color: "bg-[#456682]",
+                icon: <TbMoneybag />,
+                navigate: "/addmoney",
+              },
+              {
+                label: "Withdraw",
+                color: "bg-[#456682]",
+                icon: <FaCreditCard />,
+                navigate: "/withdraw",
+              },
+              {
+                label: "Transaction History",
+                color: "bg-[#456682]",
+                icon: <BsGraphUpArrow />,
+                navigate: "/transactions",
+              },
+              {
+                label: "Settings",
+                color: "bg-[#456682]",
+                icon: <IoMdSettings />,
+                navigate: "/settings",
+              },
             ].map((action, index) => (
               <button
                 key={index}
                 onClick={() => navigateTo(action.navigate)}
                 className={`${action.color} text-white cursor-pointer p-4 rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
               >
-                <div className="flex text-2xl mb-2 text-[#D4AF37] items-center justify-center">{action.icon}</div>
+                <div className="flex text-2xl mb-2 text-[#D4AF37] items-center justify-center">
+                  {action.icon}
+                </div>
                 <div className="text-sm">{action.label}</div>
               </button>
             ))}
