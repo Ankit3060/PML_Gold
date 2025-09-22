@@ -7,12 +7,14 @@ import Profile from "./Pages/Profile.jsx";
 import Login from './Pages/Login.jsx';
 import SetPin from './Pages/SetPin.jsx';
 import Portfolio from './Pages/Portfolio.jsx';
+import ScrollToTop from './Components/ScrollToTop.jsx';
 
 function App() {
 
   return (
     <>
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path="/" element={<Hero />} />
