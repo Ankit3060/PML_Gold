@@ -29,7 +29,7 @@ export default function SetPinPage() {
 
   return (
     <div className="flex h-screen items-center justify-center bg-gray-50">
-      <div className="flex flex-col md:flex-row w-full max-w-6xl h-[80vh] rounded-xl overflow-hidden shadow-lg bg-white">
+      <div className="flex flex-col md:flex-row w-full max-w-6xl h-[95vh] sm:h-[80vh] rounded-xl overflow-hidden shadow-lg bg-white">
         
         {/* Left Section with Video */}
         <div className="w-full md:w-1/2 h-full relative flex flex-col items-center justify-center ">
@@ -38,7 +38,7 @@ export default function SetPinPage() {
             loop
             muted
             playsInline
-            className=" top-0 left-0 w-full  object-cover"
+            className=" top-0 left-0 w-full object-cover"
           >
             <source
               src="/vault.mp4"

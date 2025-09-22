@@ -17,6 +17,8 @@ import { useNavigate } from "react-router-dom";
 import { IoMdSettings } from "react-icons/io";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { TbMoneybag } from "react-icons/tb";
+import { FaHistory } from "react-icons/fa";
+
 
 function Profile() {
   const [showAccountNumber, setShowAccountNumber] = useState(false);
@@ -296,14 +298,14 @@ function Profile() {
               {
                 label: "Transaction History",
                 color: "bg-[#456682]",
-                icon: <BsGraphUpArrow />,
+                icon: <FaHistory  />,
                 navigate: "/transactions",
               },
               {
-                label: "Settings",
+                label: "Portfolio",
                 color: "bg-[#456682]",
-                icon: <IoMdSettings />,
-                navigate: "/settings",
+                icon: <BsGraphUpArrow />,
+                navigate: "/portfolio",
               },
             ].map((action, index) => (
               <button

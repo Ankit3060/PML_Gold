@@ -6,6 +6,7 @@ import TransactionTable from './Pages/Transaction.jsx';
 import Profile from "./Pages/Profile.jsx";
 import Login from './Pages/Login.jsx';
 import SetPin from './Pages/SetPin.jsx';
+import Portfolio from './Pages/Portfolio.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/transactions" element={<TransactionTable />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/setpin" element={<SetPin />} />
+        <Route path='/portfolio' element={<Portfolio />} />
       </Routes>
     </Router>
     </>
