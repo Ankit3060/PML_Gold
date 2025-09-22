@@ -3,7 +3,7 @@ import Calculator from "../Components/Calculator";
 
 function Hero() {
   return (
-    <section className="flex justify-center items-center py-12 px-6 md:px-24">
+    <section className="flex justify-center items-center py-12 px-6 md:px-24 ml-7">
       <div className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-10">
         {/* Left Text Section */}
         <div className="flex-1 space-y-6 text-center lg:text-left">
