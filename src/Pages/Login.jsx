@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
   const [mobile, setMobile] = useState("");
@@ -9,6 +11,7 @@ export default function Login() {
   const [timeLeft, setTimeLeft] = useState(150);
   const [error, setError] = useState("");
   const [otpError, setOtpError] = useState("");
+  const { setIsLogin, setUsername } = useContext(AuthContext);
   const navigateTo = useNavigate();
 
   useEffect(() => {
@@ -45,7 +48,9 @@ export default function Login() {
       return;
     }
     setOtpError("");
-    alert(`Verified OTP: ${otp}`);
+    setIsLogin(true);
+    setUsername("Ankit");
+
     navigateTo("/setpin");
   };
 
